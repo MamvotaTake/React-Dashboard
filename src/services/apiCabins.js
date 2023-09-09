@@ -37,6 +37,8 @@ export async function createEditCabin(newCabin, id) {
     }
     
 
+    if (hasImagePath) return data;
+
     const { error: storageError } =
         await supabase.storage.from('cabin-images').upload(imageName, newCabin.image)
     
@@ -55,7 +57,7 @@ export  async function deleteCabin(id) {
 const { data, error } = await supabase
   .from('Cabins')
   .delete()
-        .eq('id', id)
+  .eq('id', id)
     
     if (error) {
         console.error(error)
