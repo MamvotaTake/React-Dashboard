@@ -19,3 +19,12 @@ const Avatar = styled.img`
   border-radius: 50%;
   outline: 2px solid var(--color-grey-100);
 `;
+
+function UserAvatar() {
+  return <StyledUserAvatar>
+    <Avatar src="https://avatars.githubusercontent.com/u/879348?v=4" />
+    <span>Takesure</span>
+  </StyledUserAvatar>
+ }
+
+export default UserAvatar;
